@@ -1,0 +1,1455 @@
+Started GET "/" for ::1 at 2017-04-25 16:06:49 +0300
+Processing by Rails::WelcomeController#index as HTML
+Started GET "/" for ::1 at 2017-04-25 16:06:49 +0300
+  Parameters: {"internal"=>true}
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb (6.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb (2.3ms)
+Completed 200 OK in 33ms (Views: 18.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 29ms (Views: 17.4ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateTodoLists (20170425131226)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "todo_lists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170425131226"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-25 13:12:32 UTC], ["updated_at", 2017-04-25 13:12:32 UTC]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for ::1 at 2017-04-25 16:12:43 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb (3.6ms)
+Completed 200 OK in 10ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todo_lists/new" for ::1 at 2017-04-25 16:13:06 +0300
+Processing by TodoListsController#new as HTML
+  Rendering todo_lists/new.html.erb within layouts/application
+  Rendered todo_lists/_form.html.erb (45.3ms)
+  Rendered todo_lists/new.html.erb within layouts/application (47.3ms)
+Completed 200 OK in 756ms (Views: 742.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/todo_lists" for ::1 at 2017-04-25 16:14:17 +0300
+Processing by TodoListsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dqLLrDJcVpsXCi4SJK2u4YaGgqPCqRgRao4gf06pkp0e5G0FxyzP9VMUF8k02DMxpnQ7B74SMxsQ/mJ9hN0ZLw==", "todo_list"=>{"title"=>"12 in 12: 6", "description"=>"stuff what i have to do in this week\r\n"}, "commit"=>"Create Todo list"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "todo_lists" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "12 in 12: 6"], ["description", "stuff what i have to do in this week\r\n"], ["created_at", 2017-04-25 13:14:17 UTC], ["updated_at", 2017-04-25 13:14:17 UTC]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/todo_lists/1
+Completed 302 Found in 7ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/todo_lists/1" for ::1 at 2017-04-25 16:14:17 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.3ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  Rendered todo_lists/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 26ms (Views: 20.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2017-04-25 16:15:22 +0300
+Processing by TodoListsController#index as HTML
+  Rendering todo_lists/index.html.erb within layouts/application
+  [1m[36mTodoList Load (0.3ms)[0m  [1m[34mSELECT "todo_lists".* FROM "todo_lists"[0m
+  Rendered todo_lists/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 38ms (Views: 27.9ms | ActiveRecord: 0.8ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateTodoItems (20170425131631)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "todo_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar, "todo_list_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_todo_items_on_todo_list_id" ON "todo_items" ("todo_list_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170425131631"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_todo_items_on_todo_list_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_todo_items_on_todo_list_id' AND type='index'
+[0m
+Started GET "/" for ::1 at 2017-04-26 00:07:11 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TodoListsController#index as HTML
+  Rendering todo_lists/index.html.erb within layouts/application
+  [1m[36mTodoList Load (1.2ms)[0m  [1m[34mSELECT "todo_lists".* FROM "todo_lists"[0m
+  Rendered todo_lists/index.html.erb within layouts/application (46.7ms)
+Completed 200 OK in 256ms (Views: 218.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for ::1 at 2017-04-26 00:07:13 +0300
+Processing by TodoListsController#index as HTML
+  Rendering todo_lists/index.html.erb within layouts/application
+  [1m[36mTodoList Load (0.2ms)[0m  [1m[34mSELECT "todo_lists".* FROM "todo_lists"[0m
+  Rendered todo_lists/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 31ms (Views: 27.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/todo_lists/new" for ::1 at 2017-04-26 00:07:16 +0300
+Processing by TodoListsController#new as HTML
+  Rendering todo_lists/new.html.erb within layouts/application
+  Rendered todo_lists/_form.html.erb (4.2ms)
+  Rendered todo_lists/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 38ms (Views: 32.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todo_lists/1" for ::1 at 2017-04-26 00:07:32 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.3ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (1.4ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered todo_lists/show.html.erb within layouts/application (359.3ms)
+Completed 500 Internal Server Error in 370ms (ActiveRecord: 2.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `todo_items' for #<#<Class:0x007fa373ea2fe0>:0x007fa3741b06d8>
+Did you mean?  todo_list_url):
+    13: <div id="todo_items_wrapper">
+    14: 	<%= render @todo_list.todo_items%>
+    15: 	<div id="form">
+    16: 			<%= render todo_items/form%>
+    17: 		</div>
+    18: </div>
+    19: 
+  
+app/views/todo_lists/show.html.erb:16:in `_app_views_todo_lists_show_html_erb__2403775105739791966_70169996380040'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.6ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (93.8ms)
+Started GET "/todo_lists/1" for ::1 at 2017-04-26 00:08:26 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.5ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.2ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered todo_lists/show.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (Missing partial todo_items/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/millionagents/Desktop/Todo/app/views"
+):
+    13: <div id="todo_items_wrapper">
+    14: 	<%= render @todo_list.todo_items%>
+    15: 	<div id="form">
+    16: 			<%= render "todo_items/form"%>
+    17: 		</div>
+    18: </div>
+    19: 
+  
+app/views/todo_lists/show.html.erb:16:in `_app_views_todo_lists_show_html_erb__2403775105739791966_70170025984520'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (13.1ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.8ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (87.9ms)
+Started GET "/todo_lists/1" for ::1 at 2017-04-26 00:08:51 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.6ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered todo_lists/show.html.erb within layouts/application (7.6ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (Missing partial todo_items/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/millionagents/Desktop/Todo/app/views"
+):
+    13: <div id="todo_items_wrapper">
+    14: 	<%= render @todo_list.todo_items%>
+    15: 	<div id="form">
+    16: 			<%= render "todo_items/form"%>
+    17: 		</div>
+    18: </div>
+    19: 
+  
+app/views/todo_lists/show.html.erb:16:in `_app_views_todo_lists_show_html_erb__2403775105739791966_70170037429080'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.2ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (71.7ms)
+Started GET "/todo_lists/1" for ::1 at 2017-04-26 00:09:28 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.3ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.2ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered todo_lists/show.html.erb within layouts/application (24.4ms)
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (Missing partial todo_items/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/millionagents/Desktop/Todo/app/views"
+):
+    13: <div id="todo_items_wrapper">
+    14: 	<%= render @todo_list.todo_items%>
+    15: 	<div id="form">
+    16: 			<%= render "todo_items/form"%>
+    17: 		</div>
+    18: </div>
+    19: 
+  
+app/views/todo_lists/show.html.erb:16:in `_app_views_todo_lists_show_html_erb__2383911651079933999_70187612889860'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.4ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (87.0ms)
+Started GET "/todo_lists/1" for ::1 at 2017-04-26 00:10:19 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.3ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.2ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered todo_lists/show.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (Missing partial todo_items/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/millionagents/Desktop/Todo/app/views"
+):
+    13: <div id="todo_items_wrapper">
+    14: 	<%= render @todo_list.todo_items%>
+    15: 	<div id="form">
+    16: 			<%= render "todo_items/form"%>
+    17: 		</div>
+    18: </div>
+    19: 
+  
+app/views/todo_lists/show.html.erb:16:in `_app_views_todo_lists_show_html_erb__2383911651079933999_70187610719040'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.2ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (73.5ms)
+Started GET "/todo_lists/1" for ::1 at 2017-04-26 00:13:23 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.2ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.1ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered todo_lists/show.html.erb within layouts/application (205.3ms)
+Completed 500 Internal Server Error in 215ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `todo_items' for #<#<Class:0x007faba7776140>:0x007faba77b5728>
+Did you mean?  todo_list_url):
+    13: <div id="todo_items_wrapper">
+    14: 	<%= render @todo_list.todo_items %>
+    15: 	<div id="form">
+    16: 			<%= render todo_items/form %>
+    17: 		</div>
+    18: </div>
+    19: 
+  
+app/views/todo_lists/show.html.erb:16:in `_app_views_todo_lists_show_html_erb__2383911651079933999_70187613008260'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.9ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (72.9ms)
+Started GET "/todo_lists/1" for ::1 at 2017-04-26 00:13:47 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.2ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  Rendered todo_lists/show.html.erb within layouts/application (6.0ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (Missing partial todo_lists/_@todo_list.todo_items, application/_@todo_list.todo_items with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/millionagents/Desktop/Todo/app/views"
+):
+    11: </p>
+    12: 
+    13: <div id="todo_items_wrapper">
+    14: 	<%= render "@todo_list.todo_items" %>
+    15: 	<div id="form">
+    16: 			<%= render "todo_items/form" %>
+    17: 		</div>
+  
+app/views/todo_lists/show.html.erb:14:in `_app_views_todo_lists_show_html_erb__2383911651079933999_70187589758180'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.8ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (82.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_todo_items_on_todo_list_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_todo_items_on_todo_list_id' AND type='index'
+[0m
+Started GET "/todo_lists/1" for ::1 at 2017-04-26 00:15:13 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.2ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered todo_lists/show.html.erb within layouts/application (11.4ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (Missing partial todo_items/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/millionagents/Desktop/Todo/app/views"
+):
+    13: <div id="todo_items_wrapper">
+    14: 	<%= render @todo_list.todo_items %>
+    15: 	<div id="form">
+    16: 			<%= render "todo_items/form" %>
+    17: 		</div>
+    18: </div>
+    19: 
+  
+app/views/todo_lists/show.html.erb:16:in `_app_views_todo_lists_show_html_erb__2383911651079933999_70187589989120'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.1ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (75.3ms)
+Started GET "/todo_lists/1" for ::1 at 2017-04-26 00:29:46 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.2ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered todo_lists/show.html.erb within layouts/application (11.9ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (Missing partial todo_items/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/millionagents/Desktop/Todo/app/views"
+):
+    13: <div id="todo_items_wrapper">
+    14: 	<%= render @todo_list.todo_items %>
+    15: 	<div id="form">
+    16: 			<%= render "todo_items/form" %>
+    17: 		</div>
+    18: </div>
+    19: 
+  
+app/views/todo_lists/show.html.erb:16:in `_app_views_todo_lists_show_html_erb__2383911651079933999_70187612709900'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.4ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (84.1ms)
+Started GET "/todo_lists/1" for ::1 at 2017-04-26 00:29:47 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.2ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered todo_lists/show.html.erb within layouts/application (6.0ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (Missing partial todo_items/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/millionagents/Desktop/Todo/app/views"
+):
+    13: <div id="todo_items_wrapper">
+    14: 	<%= render @todo_list.todo_items %>
+    15: 	<div id="form">
+    16: 			<%= render "todo_items/form" %>
+    17: 		</div>
+    18: </div>
+    19: 
+  
+app/views/todo_lists/show.html.erb:16:in `_app_views_todo_lists_show_html_erb__2383911651079933999_70187589459480'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.2ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (99.1ms)
+Started GET "/todo_lists/1" for ::1 at 2017-04-26 00:32:03 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.1ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of templates [0 times] (0.1ms)
+  Rendered todo_lists/show.html.erb within layouts/application (10.8ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (Missing partial todo_items/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/millionagents/Desktop/Todo/app/views"
+):
+    13: <div id="todo_items_wrapper">
+    14: 	<%= render @todo_list.todo_items %>
+    15: 	<div id="form">
+    16: 			<%= render "todo_items/form" %>
+    17: 		</div>
+    18: </div>
+    19: 
+  
+app/views/todo_lists/show.html.erb:16:in `_app_views_todo_lists_show_html_erb__2383911651079933999_70187610610360'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.5ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (85.2ms)
+Started GET "/todo_lists/1" for ::1 at 2017-04-26 00:32:05 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.2ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of templates [0 times] (0.1ms)
+  Rendered todo_lists/show.html.erb within layouts/application (5.9ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (Missing partial todo_items/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/millionagents/Desktop/Todo/app/views"
+):
+    13: <div id="todo_items_wrapper">
+    14: 	<%= render @todo_list.todo_items %>
+    15: 	<div id="form">
+    16: 			<%= render "todo_items/form" %>
+    17: 		</div>
+    18: </div>
+    19: 
+  
+app/views/todo_lists/show.html.erb:16:in `_app_views_todo_lists_show_html_erb__2383911651079933999_70187612107820'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.0ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (77.8ms)
+Started GET "/" for ::1 at 2017-04-26 00:34:27 +0300
+Processing by TodoListsController#index as HTML
+  Rendering todo_lists/index.html.erb within layouts/application
+  [1m[36mTodoList Load (0.1ms)[0m  [1m[34mSELECT "todo_lists".* FROM "todo_lists"[0m
+  Rendered todo_lists/index.html.erb within layouts/application (4.5ms)
+Started GET "/" for ::1 at 2017-04-26 00:34:27 +0300
+Processing by TodoListsController#index as HTML
+  Rendering todo_lists/index.html.erb within layouts/application
+  [1m[36mTodoList Load (0.4ms)[0m  [1m[34mSELECT "todo_lists".* FROM "todo_lists"[0m
+  Rendered todo_lists/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 469ms (Views: 467.1ms | ActiveRecord: 0.1ms)
+
+
+Completed 200 OK in 258ms (Views: 255.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/todo_lists/1" for ::1 at 2017-04-26 00:34:29 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.2ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered todo_lists/show.html.erb within layouts/application (6.0ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (Missing partial todo_items/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/millionagents/Desktop/Todo/app/views"
+):
+    13: <div id="todo_items_wrapper">
+    14: 	<%= render @todo_list.todo_items %>
+    15: 	<div id="form">
+    16: 			<%= render "todo_items/form" %>
+    17: 		</div>
+    18: </div>
+    19: 
+  
+app/views/todo_lists/show.html.erb:16:in `_app_views_todo_lists_show_html_erb__2383911651079933999_70187625341300'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.6ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (77.4ms)
+Started GET "/todo_lists/1" for ::1 at 2017-04-26 00:36:23 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.2ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.2ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered todo_lists/_form.html.erb (234.1ms)
+  Rendered todo_lists/show.html.erb within layouts/application (237.4ms)
+Completed 500 Internal Server Error in 244ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `todo_list' for #<#<Class:0x007faba7322710>:0x007fabab092898>
+Did you mean?  @todo_list):
+    1: <%= form_for(todo_list) do |f| %>
+    2:   <% if todo_list.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(todo_list.errors.count, "error") %> prohibited this todo_list from being saved:</h2>
+  
+app/views/todo_lists/_form.html.erb:1:in `_app_views_todo_lists__form_html_erb___969879785986834554_70187642784000'
+app/views/todo_lists/show.html.erb:16:in `_app_views_todo_lists_show_html_erb__2383911651079933999_70187642820920'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (15.7ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (79.8ms)
+Started GET "/todo_lists/1" for ::1 at 2017-04-26 00:36:36 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.1ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered todo_lists/show.html.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (Missing partial @todo_items/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/millionagents/Desktop/Todo/app/views"
+):
+    13: <div id="todo_items_wrapper">
+    14: 	<%= render @todo_list.todo_items %>
+    15: 	<div id="form">
+    16: 			<%= render "@todo_items/form" %>
+    17: 		</div>
+    18: </div>
+    19: 
+  
+app/views/todo_lists/show.html.erb:16:in `_app_views_todo_lists_show_html_erb__2383911651079933999_70187624266280'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.9ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (69.3ms)
+Started GET "/" for ::1 at 2017-04-26 00:40:16 +0300
+Started GET "/" for ::1 at 2017-04-26 00:40:16 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TodoListsController#index as HTML
+Processing by TodoListsController#index as HTML
+  Rendering todo_lists/index.html.erb within layouts/application
+  Rendering todo_lists/index.html.erb within layouts/application
+  [1m[36mTodoList Load (0.2ms)[0m  [1m[34mSELECT "todo_lists".* FROM "todo_lists"[0m
+  [1m[36mTodoList Load (0.2ms)[0m  [1m[34mSELECT "todo_lists".* FROM "todo_lists"[0m
+  Rendered todo_lists/index.html.erb within layouts/application (21.0ms)
+  Rendered todo_lists/index.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 359ms (Views: 333.4ms | ActiveRecord: 1.0ms)
+
+
+Completed 200 OK in 361ms (Views: 343.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/todo_lists/new" for ::1 at 2017-04-26 00:40:18 +0300
+Processing by TodoListsController#new as HTML
+  Rendering todo_lists/new.html.erb within layouts/application
+  Rendered todo_lists/_form.html.erb (34.3ms)
+  Rendered todo_lists/new.html.erb within layouts/application (36.9ms)
+Completed 200 OK in 74ms (Views: 71.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todo_lists" for ::1 at 2017-04-26 00:40:20 +0300
+Processing by TodoListsController#index as HTML
+  Rendering todo_lists/index.html.erb within layouts/application
+  [1m[36mTodoList Load (0.6ms)[0m  [1m[34mSELECT "todo_lists".* FROM "todo_lists"[0m
+  Rendered todo_lists/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 48ms (Views: 45.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/todo_lists/1/edit" for ::1 at 2017-04-26 00:40:22 +0300
+Processing by TodoListsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.3ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/edit.html.erb within layouts/application
+  Rendered todo_lists/_form.html.erb (3.2ms)
+  Rendered todo_lists/edit.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 39ms (Views: 27.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/todo_lists/1" for ::1 at 2017-04-26 00:40:28 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.2ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.1ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered todo_lists/show.html.erb within layouts/application (25.7ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (Missing partial todo_items/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/millionagents/Desktop/Todo/app/views"
+):
+    13: <div id="todo_items_wrapper">
+    14: 	<%= render @todo_list.todo_items %>
+    15: 	<div id="form">
+    16: 			<%= render "todo_items/form" %>
+    17: 		</div>
+    18: </div>
+    19: 
+  
+app/views/todo_lists/show.html.erb:16:in `_app_views_todo_lists_show_html_erb___657844273806531334_70342359352960'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.7ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (68.0ms)
+Started GET "/todo_lists/1" for ::1 at 2017-04-26 00:41:00 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.3ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.2ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered todo_lists/show.html.erb within layouts/application (268.7ms)
+Completed 500 Internal Server Error in 281ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `todo_items' for #<#<Class:0x007ff3b7c964d8>:0x007ff3b7151398>
+Did you mean?  todo_list_url):
+    13: <div id="todo_items_wrapper">
+    14: 	<%= render @todo_list.todo_items %>
+    15: 	<div id="form">
+    16: 			<%= render todo_items/form %>
+    17: 		</div>
+    18: </div>
+    19: 
+  
+app/views/todo_lists/show.html.erb:16:in `_app_views_todo_lists_show_html_erb___657844273806531334_70342362764080'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.4ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (70.8ms)
+Started GET "/todo_lists/1" for ::1 at 2017-04-26 00:41:13 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.1ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered todo_lists/show.html.erb within layouts/application (203.8ms)
+Completed 500 Internal Server Error in 209ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `todo_items_form' for #<#<Class:0x007ff3b7c964d8>:0x007ff3b6ac99d0>
+Did you mean?  todo_list_url):
+    13: <div id="todo_items_wrapper">
+    14: 	<%= render @todo_list.todo_items %>
+    15: 	<div id="form">
+    16: 			<%= render todo_items_form %>
+    17: 		</div>
+    18: </div>
+    19: 
+  
+app/views/todo_lists/show.html.erb:16:in `_app_views_todo_lists_show_html_erb___657844273806531334_70342359273940'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.8ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (80.8ms)
+Started GET "/todo_lists/1" for ::1 at 2017-04-26 00:41:18 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.3ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.2ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered todo_lists/show.html.erb within layouts/application (284.1ms)
+Completed 500 Internal Server Error in 293ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `todo_items_url' for #<#<Class:0x007ff3b7c964d8>:0x007ff3ba428708>
+Did you mean?  todo_lists_url):
+    13: <div id="todo_items_wrapper">
+    14: 	<%= render @todo_list.todo_items %>
+    15: 	<div id="form">
+    16: 			<%= render todo_items_url %>
+    17: 		</div>
+    18: </div>
+    19: 
+  
+app/views/todo_lists/show.html.erb:16:in `_app_views_todo_lists_show_html_erb___657844273806531334_70342389352560'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.0ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (74.0ms)
+Started GET "/todo_lists/1" for ::1 at 2017-04-26 00:41:39 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.1ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered todo_lists/show.html.erb within layouts/application (214.8ms)
+Completed 500 Internal Server Error in 222ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `todo_items' for #<#<Class:0x007ff3b7c964d8>:0x007ff3b6a893a8>
+Did you mean?  todo_list_url):
+    13: <div id="todo_items_wrapper">
+    14: 	<%= render @todo_list.todo_items %>
+    15: 	<div id="form">
+    16: 			<%= render todo_items/form %>
+    17: 		</div>
+    18: </div>
+    19: 
+  
+app/views/todo_lists/show.html.erb:16:in `_app_views_todo_lists_show_html_erb___657844273806531334_70342359142080'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.2ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (67.3ms)
+Started GET "/todo_lists/1" for ::1 at 2017-04-26 00:42:04 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.2ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered todo_lists/show.html.erb within layouts/application (244.3ms)
+Completed 500 Internal Server Error in 281ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `todo_items' for #<#<Class:0x007f884f992e18>:0x007f884f989b60>
+Did you mean?  todo_list_url):
+    13: <div id="todo_items_wrapper">
+    14: 	<%= render @todo_list.todo_items %>
+    15: 	<div id="form">
+    16: 			<%= render todo_items/form %>
+    17: 		</div>
+    18: </div>
+    19: 
+  
+app/views/todo_lists/show.html.erb:16:in `_app_views_todo_lists_show_html_erb___689625191850920604_70111713861100'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.0ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (73.1ms)
+Started GET "/todo_lists" for ::1 at 2017-04-26 00:42:29 +0300
+Processing by TodoListsController#index as HTML
+  Rendering todo_lists/index.html.erb within layouts/application
+  [1m[36mTodoList Load (0.5ms)[0m  [1m[34mSELECT "todo_lists".* FROM "todo_lists"[0m
+  Rendered todo_lists/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 245ms (Views: 240.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/todo_lists/new" for ::1 at 2017-04-26 00:42:37 +0300
+Processing by TodoListsController#new as HTML
+  Rendering todo_lists/new.html.erb within layouts/application
+  Rendered todo_lists/_form.html.erb (15.2ms)
+  Rendered todo_lists/new.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 60ms (Views: 56.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/todo_lists" for ::1 at 2017-04-26 00:43:01 +0300
+Processing by TodoListsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DaeP8ZcGepB8zp7HrQM9JPFuWku0f0W+3bw87AEt80q6iPLGugQK+XwI09rR0DbfJOtdzpSBb7EQJu13PQGZfg==", "todo_list"=>{"title"=>"12 in 12: 7", "description"=>"Some stuff for next lesson"}, "commit"=>"Create Todo list"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "todo_lists" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "12 in 12: 7"], ["description", "Some stuff for next lesson"], ["created_at", 2017-04-25 21:43:01 UTC], ["updated_at", 2017-04-25 21:43:01 UTC]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/todo_lists/2
+Completed 302 Found in 9ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/todo_lists/2" for ::1 at 2017-04-26 00:43:01 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTodoList Load (0.2ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.1ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 2]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered todo_lists/show.html.erb within layouts/application (240.8ms)
+Completed 500 Internal Server Error in 247ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `todo_items' for #<#<Class:0x007f884f992e18>:0x007f884d582bb8>
+Did you mean?  todo_list_url):
+    13: <div id="todo_items_wrapper">
+    14: 	<%= render @todo_list.todo_items %>
+    15: 	<div id="form">
+    16: 			<%= render todo_items/form %>
+    17: 		</div>
+    18: </div>
+    19: 
+  
+app/views/todo_lists/show.html.erb:16:in `_app_views_todo_lists_show_html_erb___689625191850920604_70111694953160'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.9ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (66.5ms)
+Started GET "/todo_lists/2" for ::1 at 2017-04-26 00:43:27 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTodoList Load (0.2ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.2ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 2]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered todo_lists/show.html.erb within layouts/application (226.9ms)
+Completed 500 Internal Server Error in 237ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `todo_items' for #<#<Class:0x007f884f992e18>:0x007f8850e600e8>
+Did you mean?  todo_list_url):
+    13: <div id="todo_items_wrapper">
+    14: 	<%= render @todo_list.todo_items %>
+    15: 	<div id="form">
+    16: 			<%= render todo_items/form %>
+    17: 		</div>
+    18: </div>
+    19: 
+  
+app/views/todo_lists/show.html.erb:16:in `_app_views_todo_lists_show_html_erb___689625191850920604_70111724767820'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.8ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (72.9ms)
+Started GET "/todo_lists/2" for ::1 at 2017-04-26 00:43:33 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTodoList Load (0.2ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.1ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 2]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered todo_lists/show.html.erb within layouts/application (214.4ms)
+Completed 500 Internal Server Error in 224ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `todo_items' for #<#<Class:0x007f884f992e18>:0x007f8850e10958>
+Did you mean?  todo_list_url):
+    13: <div id="todo_items_wrapper">
+    14: 	<%= render @todo_list.todo_items %>
+    15: 	<div id="form">
+    16: 			<%= render todo_items/form %>
+    17: 		</div>
+    18: </div>
+    19: 
+  
+app/views/todo_lists/show.html.erb:16:in `_app_views_todo_lists_show_html_erb___689625191850920604_70111724605220'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.1ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (70.1ms)
+Started GET "/todo_lists/2" for ::1 at 2017-04-26 00:46:11 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.1ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 2]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered todo_lists/show.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (Missing partial todo_items/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/millionagents/Desktop/Todo/app/views"
+):
+    13: <div id="todo_items_wrapper">
+    14: 	<%= render @todo_list.todo_items %>
+    15: 	<div id="form">
+    16: 		<%= render "todo_items/form" %>
+    17: 	</div>
+    18: </div>
+    19: 
+  
+app/views/todo_lists/show.html.erb:16:in `_app_views_todo_lists_show_html_erb___689625191850920604_70111694048960'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.0ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (87.0ms)
+Started GET "/" for ::1 at 2017-04-26 00:48:24 +0300
+Started GET "/" for ::1 at 2017-04-26 00:48:24 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TodoListsController#index as HTML
+Processing by TodoListsController#index as HTML
+  Rendering todo_lists/index.html.erb within layouts/application
+  [1m[36mTodoList Load (0.2ms)[0m  [1m[34mSELECT "todo_lists".* FROM "todo_lists"[0m
+  Rendering todo_lists/index.html.erb within layouts/application
+  [1m[36mTodoList Load (0.3ms)[0m  [1m[34mSELECT "todo_lists".* FROM "todo_lists"[0m
+  Rendered todo_lists/index.html.erb within layouts/application (17.8ms)
+  Rendered todo_lists/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 347ms (Views: 322.3ms | ActiveRecord: 0.9ms)
+
+
+Completed 200 OK in 340ms (Views: 314.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/todo_lists/1" for ::1 at 2017-04-26 00:48:27 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.5ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.1ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered todo_lists/show.html.erb within layouts/application (20.9ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (Missing partial todo_items/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/millionagents/Desktop/Todo/app/views"
+):
+    13: <div id="todo_items_wrapper">
+    14: 	<%= render @todo_list.todo_items %>
+    15: 	<div id="form">
+    16: 		<%= render "todo_items/form" %>
+    17: 	</div>
+    18: </div>
+    19: 
+  
+app/views/todo_lists/show.html.erb:16:in `_app_views_todo_lists_show_html_erb___646563328615851993_70242871216560'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.1ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (69.6ms)
+Started GET "/todo_lists/1" for ::1 at 2017-04-26 00:55:29 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.3ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.2ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered todo_lists/show.html.erb within layouts/application (6.0ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (Missing partial todo_items/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/millionagents/Desktop/Todo/app/views"
+):
+    13: <div id="todo_items_wrapper">
+    14: 	<%= render @todo_list.todo_items %>
+    15: 	<div id="form">
+    16: 		<%= render "todo_items/form" %>
+    17: 		
+    18: 	</div>
+    19: 	
+  
+app/views/todo_lists/show.html.erb:16:in `_app_views_todo_lists_show_html_erb___646563328615851993_70242871127900'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.3ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (78.4ms)
+Started GET "/todo_lists/1" for ::1 at 2017-04-26 00:55:50 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.1ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered todo_lists/show.html.erb within layouts/application (5.9ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (Missing partial todo_items/__form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/millionagents/Desktop/Todo/app/views"
+):
+    13: <div id="todo_items_wrapper">
+    14: 	<%= render @todo_list.todo_items %>
+    15: 	<div id="form">
+    16: 		<%= render "todo_items/_form" %>
+    17: 		
+    18: 	</div>
+    19: 	
+  
+app/views/todo_lists/show.html.erb:16:in `_app_views_todo_lists_show_html_erb___646563328615851993_70242870978500'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.0ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (72.2ms)
+Started GET "/todo_lists/1" for ::1 at 2017-04-26 00:56:08 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.3ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.3ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of templates [0 times] (0.1ms)
+  Rendered todo_lists/show.html.erb within layouts/application (7.9ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (Missing partial todo_items/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/millionagents/Desktop/Todo/app/views"
+):
+    13: <div id="todo_items_wrapper">
+    14: 	<%= render @todo_list.todo_items %>
+    15: 	<div id="form">
+    16: 		<%= render 'todo_items/form' %>
+    17: 		
+    18: 	</div>
+    19: 	
+  
+app/views/todo_lists/show.html.erb:16:in `_app_views_todo_lists_show_html_erb___646563328615851993_70242870576440'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.4ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (72.7ms)
+Started GET "/todo_lists/" for ::1 at 2017-04-26 00:56:23 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TodoListsController#index as HTML
+  Rendering todo_lists/index.html.erb within layouts/application
+  [1m[36mTodoList Load (0.2ms)[0m  [1m[34mSELECT "todo_lists".* FROM "todo_lists"[0m
+  Rendered todo_lists/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 276ms (Views: 258.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/todo_lists/1" for ::1 at 2017-04-26 00:56:26 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.6ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.1ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered todo_lists/show.html.erb within layouts/application (20.8ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial todo_items/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/millionagents/Desktop/Todo/app/views"
+):
+    13: <div id="todo_items_wrapper">
+    14: 	<%= render @todo_list.todo_items %>
+    15: 	<div id="form">
+    16: 		<%= render 'todo_items/form' %>
+    17: 		
+    18: 	</div>
+    19: 	
+  
+app/views/todo_lists/show.html.erb:16:in `_app_views_todo_lists_show_html_erb__2358534561456744939_70352405763380'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.1ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (71.7ms)
+Started GET "/todo_lists/1" for ::1 at 2017-04-26 00:57:02 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.3ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.2ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered todo_items/_form.html.erb (23.6ms)
+  Rendered todo_lists/show.html.erb within layouts/application (28.5ms)
+Completed 200 OK in 53ms (Views: 48.8ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/todo_lists/1/todo_items" for ::1 at 2017-04-26 00:57:07 +0300
+Processing by TodoItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"buBlah3tClqRmc6YvOPG48Jwo8WVMQvTarKGLF5c8ksGpsPD6J2TNNWH90Osllsz4oIaYemKINkQwsQulCh5+Q==", "todo_item"=>{"content"=>"new one "}, "commit"=>"Create Todo item", "todo_list_id"=>"1"}
+  [1m[36mTodoList Load (0.2ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "todo_items" ("content", "todo_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "new one "], ["todo_list_id", 1], ["created_at", 2017-04-25 21:57:07 UTC], ["updated_at", 2017-04-25 21:57:07 UTC]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/todo_lists/1
+Completed 302 Found in 9ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/todo_lists/1" for ::1 at 2017-04-26 00:57:07 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.1ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of todo_items/_todo_item.html.erb [1 times] (0.4ms)
+  Rendered todo_items/_form.html.erb (1.8ms)
+  Rendered todo_lists/show.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 32ms (Views: 29.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/todo_lists/1/todo_items" for ::1 at 2017-04-26 00:57:11 +0300
+Processing by TodoItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7+cjTyKMZg22mOGx5DZlwPbze1eUrGnGd2nP2j4TJxSHoYXm1/z/Y/KG2Gr0Q/gQ1gHC8+gXQswNGY3Y9Gespg==", "todo_item"=>{"content"=>"another one"}, "commit"=>"Create Todo item", "todo_list_id"=>"1"}
+  [1m[36mTodoList Load (0.3ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "todo_items" ("content", "todo_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "another one"], ["todo_list_id", 1], ["created_at", 2017-04-25 21:57:11 UTC], ["updated_at", 2017-04-25 21:57:11 UTC]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/todo_lists/1
+Completed 302 Found in 10ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/todo_lists/1" for ::1 at 2017-04-26 00:57:11 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.1ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of todo_items/_todo_item.html.erb [2 times] (0.4ms)
+  Rendered todo_items/_form.html.erb (1.5ms)
+  Rendered todo_lists/show.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 29ms (Views: 26.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/todo_lists/1" for ::1 at 2017-04-26 01:00:28 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.2ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.2ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of todo_items/_todo_item.html.erb [2 times] (1.3ms)
+  Rendered todo_items/_form.html.erb (1.7ms)
+  Rendered todo_lists/show.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 33ms (Views: 29.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/todo_lists/1?data%5Bconfirm%5D=Are+you+sure%3F&method=delete" for ::1 at 2017-04-26 01:00:32 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"data"=>{"confirm"=>"Are you sure?"}, "method"=>"delete", "id"=>"1"}
+  [1m[36mTodoList Load (0.3ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.2ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of todo_items/_todo_item.html.erb [2 times] (1.0ms)
+  Rendered todo_items/_form.html.erb (1.5ms)
+  Rendered todo_lists/show.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 43ms (Views: 36.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/todo_lists/1?data%5Bconfirm%5D=Are+you+sure%3F&method=delete" for ::1 at 2017-04-26 01:00:36 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"data"=>{"confirm"=>"Are you sure?"}, "method"=>"delete", "id"=>"1"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.1ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of todo_items/_todo_item.html.erb [2 times] (2.1ms)
+  Rendered todo_items/_form.html.erb (2.4ms)
+  Rendered todo_lists/show.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 34ms (Views: 30.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/todo_lists/1" for ::1 at 2017-04-26 01:00:59 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.3ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.1ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of todo_items/_todo_item.html.erb [2 times] (0.7ms)
+  Rendered todo_lists/show.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.4ms)
+
+
+  
+SyntaxError (/Users/millionagents/Desktop/Todo/app/views/todo_items/_todo_item.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting ')'
+lete" todo_list_todo_item_path(@todo_list, todo_item.id), me
+                              ^
+/Users/millionagents/Desktop/Todo/app/views/todo_items/_todo_item.html.erb:2: syntax error, unexpected ',', expecting ')'
+ath(@todo_list, todo_item.id), method: :delete, data: { conf
+                              ^):
+  
+app/views/todo_items/_todo_item.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/todo_items/_todo_item.html.erb:2: syntax error, unexpected ',', expecting ')'
+app/views/todo_lists/show.html.erb:14:in `_app_views_todo_lists_show_html_erb__2358534561456744939_70352432629120'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.7ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (80.9ms)
+Started GET "/todo_lists/1" for ::1 at 2017-04-26 01:01:42 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.1ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of todo_items/_todo_item.html.erb [2 times] (1.7ms)
+  Rendered todo_items/_form.html.erb (2.3ms)
+  Rendered todo_lists/show.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 30ms (Views: 27.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/todo_lists/1" for ::1 at 2017-04-26 15:40:16 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (1.9ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.1ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of todo_items/_todo_item.html.erb [2 times] (4.5ms)
+  Rendered todo_items/_form.html.erb (10.1ms)
+  Rendered todo_lists/show.html.erb within layouts/application (33.3ms)
+Completed 200 OK in 129ms (Views: 113.7ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/todo_lists/1/todo_items" for ::1 at 2017-04-26 15:40:22 +0300
+Processing by TodoItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Lz0+lL6BxJ7Fc4pb37+OlZMpxsN4YpHceK/hnWUCwiZHe5g9S/Fd8IFts4DPyhNFs9t/ZwTZutYC36Ofr3ZJlA==", "todo_item"=>{"content"=>"and another one"}, "commit"=>"Create Todo item", "todo_list_id"=>"1"}
+  [1m[36mTodoList Load (0.5ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "todo_items" ("content", "todo_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "and another one"], ["todo_list_id", 1], ["created_at", 2017-04-26 12:40:22 UTC], ["updated_at", 2017-04-26 12:40:22 UTC]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/todo_lists/1
+Completed 302 Found in 18ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/todo_lists/1" for ::1 at 2017-04-26 15:40:22 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (1.3ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.1ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of todo_items/_todo_item.html.erb [3 times] (1.2ms)
+  Rendered todo_items/_form.html.erb (2.2ms)
+  Rendered todo_lists/show.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 70ms (Views: 66.5ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/todo_lists/1/todo_items/1" for ::1 at 2017-04-26 15:43:27 +0300
+  
+AbstractController::ActionNotFound (The action 'destroy' could not be found for TodoItemsController):
+  
+actionpack (5.0.2) lib/abstract_controller/base.rb:121:in `process'
+actionview (5.0.2) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.2) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.2) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.7ms)
+Started GET "/todo_lists/1" for ::1 at 2017-04-26 18:48:52 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (1.4ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.2ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of todo_items/_todo_item.html.erb [3 times] (1.4ms)
+  Rendered todo_items/_form.html.erb (4.5ms)
+  Rendered todo_lists/show.html.erb within layouts/application (32.6ms)
+Completed 200 OK in 155ms (Views: 121.7ms | ActiveRecord: 3.3ms)
+
+
+Started DELETE "/todo_lists/1/todo_items/2" for ::1 at 2017-04-26 18:48:56 +0300
+Processing by TodoItemsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JuHVxQ7IVtcFSdLVh+bxS9hxSy3rncq2fmyi90XBs+1Op3Ns+7jPuUFX6w6Xk2yb+IPyiZcm4bwEHOD1j7U4Xw==", "todo_list_id"=>"1", "id"=>"2"}
+  [1m[36mTodoList Load (0.2ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTodoItem Load (0.4ms)[0m  [1m[34mSELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ? AND "todo_items"."id" = ? LIMIT ?[0m  [["todo_list_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "todo_items" WHERE "todo_items"."id" = ?[0m  [["id", 2]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/todo_lists/1
+Completed 302 Found in 14ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/todo_lists/1" for ::1 at 2017-04-26 18:48:57 +0300
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoList Load (0.2ms)[0m  [1m[34mSELECT  "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering todo_lists/show.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.1ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."todo_list_id" = ?[0m  [["todo_list_id", 1]]
+  Rendered collection of todo_items/_todo_item.html.erb [2 times] (0.9ms)
+  Rendered todo_items/_form.html.erb (2.2ms)
+  Rendered todo_lists/show.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 42ms (Views: 36.7ms | ActiveRecord: 0.3ms)
+
+
